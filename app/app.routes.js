@@ -75,6 +75,32 @@ app.config( function ( $stateProvider, $urlRouterProvider ) {
             }
         } )
 
+        // Authorization Example
+        .state( 'authHome', {
+            url:         '/authhome',
+            templateUrl: 'app/components/example/authhome.partial.html',
+            controller:  'exAuthHomeController'
+        } )
+
+        .state( 'authHome.authorized', {
+            url:         '/authorized',
+            templateUrl: 'app/components/example/authorized.partial.html',
+            resolve: {
+                isCool: function ( example ) {
+                    // The assumption is you've authenticated elsewhere before attempting, if not, this will reject
+                    return example.authenticateMock();
+                }
+            },
+            controller:  'exAuthorizedPageController'
+        } )
+        
+        .state( 'fourohthree', {
+                url:         '/fourohthree',
+                templateUrl: 'app/components/example/fourohthree.partial.html'
+            }
+        )
+        
+
 } );
 
 

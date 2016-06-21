@@ -1,0 +1,18 @@
+<div class="jumbotron">
+    <h1>Authorization Example</h1>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <h4>State: {{ ui.authResp }}</h4>
+        <button class="btn-success btn" ng-click="login()" style="width: 100%; margin-bottom: 5px;">Login</button>
+        <button class="btn-primary btn" ng-click="badLogin()" style="width: 100%; margin-bottom: 5px;">Fail Login
+        </button>
+
+        <button class="btn-danger btn" ng-click="logout()" style="width: 100%; margin-bottom: 5px;">Logout</button>
+        <a class="btn-warning btn" ui-sref=".authorized" style="width: 100%; margin-bottom: 5px;">Attempt Restricted</a>
+    </div>
+    <div class="col-md-offset-1 col-md-8">
+        <h3>Content</h3>
+        <div ui-view>Nothing to see here.</div>
+    </div>
+</div>
